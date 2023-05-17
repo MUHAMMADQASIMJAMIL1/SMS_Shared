@@ -53,11 +53,5 @@ public class CategoryEntity {
         return Objects.hash(id, emmisionName, status, createdBy, createdDate, scope);
     }
 
-    public Set<SubCategoryEntity> getSubCategoriesById() {
-        return subCategoriesById;
-    }
 
-    public void setSubCategoriesById(Set<SubCategoryEntity> subCategoriesById) {
-        this.subCategoriesById = subCategoriesById;
-    }
 }

@@ -33,7 +33,6 @@ public class TagsEntity {
         TagsEntity that = (TagsEntity) o;
         return Objects.equals(id, that.id) && Objects.equals(tagName, that.tagName) && Objects.equals(status, that.status);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(id, tagName, status);

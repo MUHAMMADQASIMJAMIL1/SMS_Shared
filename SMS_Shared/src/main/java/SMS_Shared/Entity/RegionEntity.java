@@ -50,11 +50,5 @@ public class RegionEntity {
         return Objects.hash(id, regionName, createdDate, createdBy, status);
     }
 
-    public Set<OrganizationSiteEntity> getOrganizationSitesById() {
-        return organizationSitesById;
-    }
 
-    public void setOrganizationSitesById(Set<OrganizationSiteEntity> organizationSitesById) {
-        this.organizationSitesById = organizationSitesById;
-    }
 }

@@ -44,11 +44,6 @@ public class GroupEntity {
         return Objects.hash(id, groupName, status);
     }
 
-    public Set<OrganizationSiteEntity> getOrganizationSitesById() {
-        return organizationSitesById;
-    }
 
-    public void setOrganizationSitesById(Set<OrganizationSiteEntity> organizationSitesById) {
-        this.organizationSitesById = organizationSitesById;
-    }
+
 }

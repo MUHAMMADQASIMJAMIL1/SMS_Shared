@@ -63,11 +63,5 @@ public class StandardEntity {
         return Objects.hash(id, standardName, year, countryIndex, status, createdDate, createdBy, updatedDate, updatedBy);
     }
 
-    public Set<SubCategoryEntity> getSubCategoriesById() {
-        return subCategoriesById;
-    }
 
-    public void setSubCategoriesById(Set<SubCategoryEntity> subCategoriesById) {
-        this.subCategoriesById = subCategoriesById;
-    }
 }
