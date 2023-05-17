@@ -1,11 +1,19 @@
 package SMS_Shared.Entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.sql.Date;
 import java.util.Objects;
 
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "sub_category", schema = "sms_shared", catalog = "")
 public class SubCategoryEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -80,194 +88,11 @@ public class SubCategoryEntity {
     private String co2Quantity;
     @ManyToOne
     @JoinColumn(name = "category_index", referencedColumnName = "id")
-    private CategoryEntity categoryByCategoryIndex;
+    private CategoryEntity categoryIndex;
     @ManyToOne
     @JoinColumn(name = "standard_index", referencedColumnName = "id")
-    private StandardEntity standardByStandardIndex;
+    private StandardEntity standardIndex;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getCo2() {
-        return co2;
-    }
-
-    public void setCo2(String co2) {
-        this.co2 = co2;
-    }
-
-    public String getCo2Unit() {
-        return co2Unit;
-    }
-
-    public void setCo2Unit(String co2Unit) {
-        this.co2Unit = co2Unit;
-    }
-
-    public String getCh4() {
-        return ch4;
-    }
-
-    public void setCh4(String ch4) {
-        this.ch4 = ch4;
-    }
-
-    public String getCh4Unit() {
-        return ch4Unit;
-    }
-
-    public void setCh4Unit(String ch4Unit) {
-        this.ch4Unit = ch4Unit;
-    }
-
-    public String getCh() {
-        return ch;
-    }
-
-    public void setCh(String ch) {
-        this.ch = ch;
-    }
-
-    public String getChUnit() {
-        return chUnit;
-    }
-
-    public void setChUnit(String chUnit) {
-        this.chUnit = chUnit;
-    }
-
-    public Long getUnitIndex() {
-        return unitIndex;
-    }
-
-    public void setUnitIndex(Long unitIndex) {
-        this.unitIndex = unitIndex;
-    }
-
-    public Date getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getN2O() {
-        return n2O;
-    }
-
-    public void setN2O(String n2O) {
-        this.n2O = n2O;
-    }
-
-    public String getN2OUnit() {
-        return n2OUnit;
-    }
-
-    public void setN2OUnit(String n2OUnit) {
-        this.n2OUnit = n2OUnit;
-    }
-
-    public String getHfcs() {
-        return hfcs;
-    }
-
-    public void setHfcs(String hfcs) {
-        this.hfcs = hfcs;
-    }
-
-    public String getHfcsUnit() {
-        return hfcsUnit;
-    }
-
-    public void setHfcsUnit(String hfcsUnit) {
-        this.hfcsUnit = hfcsUnit;
-    }
-
-    public String getPfcs() {
-        return pfcs;
-    }
-
-    public void setPfcs(String pfcs) {
-        this.pfcs = pfcs;
-    }
-
-    public String getPfcsUnit() {
-        return pfcsUnit;
-    }
-
-    public void setPfcsUnit(String pfcsUnit) {
-        this.pfcsUnit = pfcsUnit;
-    }
-
-    public String getSf6() {
-        return sf6;
-    }
-
-    public void setSf6(String sf6) {
-        this.sf6 = sf6;
-    }
-
-    public String getSf6Unit() {
-        return sf6Unit;
-    }
-
-    public void setSf6Unit(String sf6Unit) {
-        this.sf6Unit = sf6Unit;
-    }
-
-    public String getNf3() {
-        return nf3;
-    }
-
-    public void setNf3(String nf3) {
-        this.nf3 = nf3;
-    }
-
-    public String getNf3Unit() {
-        return nf3Unit;
-    }
-
-    public void setNf3Unit(String nf3Unit) {
-        this.nf3Unit = nf3Unit;
-    }
-
-    public String getCo2Quantity() {
-        return co2Quantity;
-    }
-
-    public void setCo2Quantity(String co2Quantity) {
-        this.co2Quantity = co2Quantity;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -282,19 +107,5 @@ public class SubCategoryEntity {
         return Objects.hash(id, name, description, co2, co2Unit, ch4, ch4Unit, ch, chUnit, unitIndex, createdDate, status, n2O, n2OUnit, hfcs, hfcsUnit, pfcs, pfcsUnit, sf6, sf6Unit, nf3, nf3Unit, co2Quantity);
     }
 
-    public CategoryEntity getCategoryByCategoryIndex() {
-        return categoryByCategoryIndex;
-    }
 
-    public void setCategoryByCategoryIndex(CategoryEntity categoryByCategoryIndex) {
-        this.categoryByCategoryIndex = categoryByCategoryIndex;
-    }
-
-    public StandardEntity getStandardByStandardIndex() {
-        return standardByStandardIndex;
-    }
-
-    public void setStandardByStandardIndex(StandardEntity standardByStandardIndex) {
-        this.standardByStandardIndex = standardByStandardIndex;
-    }
 }

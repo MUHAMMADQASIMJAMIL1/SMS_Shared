@@ -67,9 +67,9 @@ public class SubCategoryDto {
 
     private String co2Quantity;
 
-    private CategoryDto categoryByCategoryIndex;
+    private CategoryDto categoryIndex;
 
-    private StandardDto standardByStandardIndex;
+    private StandardDto standardIndex;
 
 
 

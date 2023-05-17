@@ -1,12 +1,20 @@
 package SMS_Shared.Entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.sql.Timestamp;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "standard", schema = "sms_shared", catalog = "")
 public class StandardEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,80 +45,10 @@ public class StandardEntity {
     @Basic
     @Column(name = "updated_by", nullable = true, length = 255)
     private String updatedBy;
-    @OneToMany(mappedBy = "standardByStandardIndex")
+    @OneToMany(mappedBy = "standardIndex")
     private Set<SubCategoryEntity> subCategoriesById;
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getStandardName() {
-        return standardName;
-    }
-
-    public void setStandardName(String standardName) {
-        this.standardName = standardName;
-    }
-
-    public Integer getYear() {
-        return year;
-    }
-
-    public void setYear(Integer year) {
-        this.year = year;
-    }
-
-    public Integer getCountryIndex() {
-        return countryIndex;
-    }
-
-    public void setCountryIndex(Integer countryIndex) {
-        this.countryIndex = countryIndex;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public Timestamp getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(Timestamp createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public Timestamp getUpdatedDate() {
-        return updatedDate;
-    }
-
-    public void setUpdatedDate(Timestamp updatedDate) {
-        this.updatedDate = updatedDate;
-    }
-
-    public String getUpdatedBy() {
-        return updatedBy;
-    }
-
-    public void setUpdatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-    }
 
     @Override
     public boolean equals(Object o) {

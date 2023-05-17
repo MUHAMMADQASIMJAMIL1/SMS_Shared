@@ -1,12 +1,20 @@
 package SMS_Shared.Entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.sql.Timestamp;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "category", schema = "sms_shared", catalog = "")
 public class CategoryEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,56 +36,9 @@ public class CategoryEntity {
     @Basic
     @Column(name = "scope", nullable = true, length = 255)
     private String scope;
-    @OneToMany(mappedBy = "categoryByCategoryIndex")
+    @OneToMany(mappedBy = "categoryIndex")
     private Set<SubCategoryEntity> subCategoriesById;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getEmmisionName() {
-        return emmisionName;
-    }
-
-    public void setEmmisionName(String emmisionName) {
-        this.emmisionName = emmisionName;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public Timestamp getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(Timestamp createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public String getScope() {
-        return scope;
-    }
-
-    public void setScope(String scope) {
-        this.scope = scope;
-    }
 
     @Override
     public boolean equals(Object o) {

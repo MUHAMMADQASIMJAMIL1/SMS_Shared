@@ -1,12 +1,20 @@
 package SMS_Shared.Entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.sql.Date;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "region", schema = "sms_shared", catalog = "")
 public class RegionEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,48 +33,9 @@ public class RegionEntity {
     @Basic
     @Column(name = "status", nullable = true, length = 255)
     private String status;
-    @OneToMany(mappedBy = "regionByRegionIndex")
+    @OneToMany(mappedBy = "regionIndex")
     private Set<OrganizationSiteEntity> organizationSitesById;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getRegionName() {
-        return regionName;
-    }
-
-    public void setRegionName(String regionName) {
-        this.regionName = regionName;
-    }
-
-    public Date getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
 
     @Override
     public boolean equals(Object o) {

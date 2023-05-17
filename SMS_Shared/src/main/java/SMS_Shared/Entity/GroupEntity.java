@@ -1,11 +1,19 @@
 package SMS_Shared.Entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "add_group", schema = "sms_shared", catalog = "")
 public class GroupEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,32 +26,10 @@ public class GroupEntity {
     @Basic
     @Column(name = "status", nullable = true)
     private Integer status;
-    @OneToMany(mappedBy = "groupByGroupIndex")
+    @OneToMany(mappedBy = "groupIndex")
     private Set<OrganizationSiteEntity> organizationSitesById;
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getGroupName() {
-        return groupName;
-    }
-
-    public void setGroupName(String groupName) {
-        this.groupName = groupName;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
 
     @Override
     public boolean equals(Object o) {

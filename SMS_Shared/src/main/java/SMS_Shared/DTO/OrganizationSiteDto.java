@@ -35,8 +35,8 @@ public class OrganizationSiteDto {
 
     private String updatedBy;
 
-    private GroupDto groupByGroupIndex;
+    private GroupDto groupIndex;
 
-    private RegionDto regionByRegionIndex;
+    private RegionDto regionIndex;
 //    private Set<OrganizationSiteDto> organizationSitesById;
 }
